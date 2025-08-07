@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('modal-overlay').classList.add('hidden');
+});
+
+// script.js - Checkers Game with Sound, Scoreboard, and End Letter by Hosheyah
+
+const BOARD_SIZE = 8;
+const RED = 'red';
+const BLACK = 'black';
+// ...rest of your code...
+
 // script.js - Checkers Game with Sound, Scoreboard, and End Letter by Hosheyah
 
 const BOARD_SIZE = 8;
