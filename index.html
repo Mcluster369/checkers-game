@@ -1,0 +1,53 @@
+<!--
+  Checkers Game by Hosheyah - Advanced (Sound, Scoreboard, End Letter)
+  index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkers Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Checkers Game</h1>
+  <div id="game-container">
+    <div id="checkers-board"></div>
+    <div id="sidebar">
+      <div id="scoreboard">
+        <h2>Scoreboard</h2>
+        <div class="score-row">
+          <span class="score-label red">Red: </span>
+          <span id="red-score" class="score-value">0</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label black">Black: </span>
+          <span id="black-score" class="score-value">0</span>
+        </div>
+      </div>
+      <button id="reset-btn">Restart Game</button>
+      <div id="player-turn">Current Turn: <span id="turn">Red</span></div>
+      <p id="instructions">Click your piece to select, then click a square to move or capture.<br>
+      Multiple jumps and kinging are supported. Red starts!</p>
+    </div>
+  </div>
+  
+  <!-- Sounds -->
+  <audio id="move-sound" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa8c19.mp3"></audio>
+  <audio id="capture-sound" src="https://cdn.pixabay.com/audio/2022/08/20/audio_12fc78b7b0.mp3"></audio>
+  <audio id="king-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b5c0f7d.mp3"></audio>
+  <audio id="win-sound" src="https://cdn.pixabay.com/audio/2022/10/16/audio_123459bb6e.mp3"></audio>
+
+  <!-- Winner Modal -->
+  <div id="modal-overlay" class="hidden">
+    <div id="modal">
+      <h2 id="winner-msg"></h2>
+      <p id="end-letter"></p>
+      <button id="close-modal-btn">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
