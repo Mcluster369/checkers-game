@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkers — Assignment 5.1</title>
+
+  <!-- EARLY shim: some sandboxes/extensions call invoke() before your app loads -->
+  <script>
+    function invoke(){ /* no-op for sandbox compatibility */ }
+    if (typeof window !== "undefined") window.invoke = invoke;
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="card board-wrap">
+      <h1>Checkers</h1>
+      <p class="sub">Single-square moves implemented. Advanced mode: forced captures, multi-jump, kinging continues.</p>
+      <div id="board" role="grid" aria-label="Checkers board" aria-live="polite"></div>
+      <p class="sr-only" id="aria-status"></p>
+    </section>
+
+    <aside class="card panel">
+      <h1>Game Controls</h1>
+      <div class="row">
+        <button class="btn" id="newGameBtn">New Game</button>
+        <button class="btn secondary" id="toggleCapturesBtn" aria-pressed="false">Enable Captures & Kinging</button>
+        <button class="btn secondary" id="runTestsBtn" title="Run built-in unit tests">Run Tests</button>
+      </div>
+      <div class="row">
+        <span class="pill" id="turnPill">Turn: <b>Red</b></span>
+        <span class="pill">Mode: <b id="modePill">Simple</b></span>
+      </div>
+
+      <div>
+        <h1 style="font-size:18px;margin:8px 0 6px">Scoreboard</h1>
+        <div class="score" id="scoreboard">
+          <div class="panel">
+            <h2>🔴 Red</h2>
+            <p>Captured: <b id="scoreRed">0</b></p>
+            <p>Remaining: <b id="remainRed">12</b></p>
+          </div>
+          <div class="panel">
+            <h2>⚫ Black</h2>
+            <p>Captured: <b id="scoreBlack">0</b></p>
+            <p>Remaining: <b id="remainBlack">12</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h1 style="font-size:18px;margin:8px 0 6px">Move Log</h1>
+        <div class="log" id="log" aria-live="polite"></div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
